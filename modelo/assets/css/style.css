@@ -7,8 +7,13 @@
 * {
   box-sizing: border-box;
   outline: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+h2 {
+  margin: 16px 0;
+}
 body {
   margin: 0;
   padding: 0;
@@ -31,28 +36,32 @@ form input, form label, form button {
   width: 100%;
   margin-bottom: 10px;
 }
-
-form input {
-  font-size: 24px;
-  height: 50px;
-  padding: 0 20px;
+.imc-result{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.imc-result ul {  
+  list-style-type: none;
+  padding: 0;
+}
+.imc {
+  margin-right: 100px;
 }
 
-form input:focus {
-  outline: 1px solid var(--primary-color);
+.formulario input, button{
+  padding:  14px;
+  font-size: 16px;
 }
 
-form button {
+button {
+  background: var( --primary-color);
   border: none;
-  background: var(--primary-color);
   color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  height: 50px;
-  cursor: pointer;
-  margin-top: 30px;
-}
+  cursor:pointer;
 
-form button:hover {
+}
+button:hover{
   background: var(--primary-color-darker);
+  transition:  .3s all ;
 }
