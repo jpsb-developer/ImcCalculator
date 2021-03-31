@@ -49,9 +49,9 @@ form input, form label, form button {
   margin-right: 100px;
 }
 
-.formulario input, button{
-  padding:  14px;
-  font-size: 16px;
+.formulario input{
+    font-size: 20px;
+    padding: 8px;
 }
 
 button {
@@ -59,7 +59,8 @@ button {
   border: none;
   color: #fff;
   cursor:pointer;
-
+  padding:  14px;
+  font-size: 16px;
 }
 button:hover{
   background: var(--primary-color-darker);
