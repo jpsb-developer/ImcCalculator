@@ -1,25 +1,23 @@
 const form = document.querySelector('form');
 const container = document.querySelector('.container');
-
+const peso = document.querySelector('.peso')
+const altura = document.querySelector('.altura')
 const calculaIMC = (event) => {
 	event.preventDefault();
-	const valuesInput = inputValues();
+	const valuesInput = inputValues(peso, altura);
 	const imc = valuesInput.peso / valuesInput.altura ** 2;
 	const imcVerificado = verificaIMC(imc);
 	const paragraph = createP(imc, imcVerificado);
 
 	container.appendChild(paragraph);
-	
+	limpaInput(peso, altura)
 }
 
-const inputValues = () => {
-	const peso = document.querySelector('.peso')
-	const altura = document.querySelector('.altura')
+const inputValues = (peso, altura) => {
 	const formInputs = {
 		peso: peso.value,
 		altura: altura.value
 	}
-	
 	return formInputs
 }
 
@@ -38,4 +36,9 @@ const verificaIMC = (imc) => {
 	if (imc > 40) return `Obesidade grau 3`
 }
 
+const limpaInput = (peso, altura) => {
+	peso.value = ""
+	altura.value = ""
+	peso.focus()
+}
 form.addEventListener('submit', calculaIMC);
